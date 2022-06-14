@@ -73,7 +73,7 @@ void _free_pages(void*ptr);
 void __free_pages(struct page*,unsigned int);
 void __free_pages_ok(struct page*,unsigned int);
 
-int cal_cur_order(unsigned long);
+int cat_cur_order(unsigned long);
 void _show_free_order_list(int);
 void _show_free_list_map(int);
 

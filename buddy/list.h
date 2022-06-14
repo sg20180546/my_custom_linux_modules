@@ -7,7 +7,7 @@ struct list_head{
 
 #define list_entry(ptr,type,member)\
     ((type*)((char*)(ptr) - (unsigned long)(&((type*)0)->member )  )  )
-
+// struct page* (char*)curr - (struct page*)0->list
 
 void list_add(struct list_head*,struct list_head*);
 void __list_add(struct list_head*,struct list_head*,struct list_head*);
