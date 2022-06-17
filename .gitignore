@@ -1,1 +1,5 @@
 buddy2
+*.ko
+*.cmd
+*.o
+*.mod
