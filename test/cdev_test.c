@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <fcntl.h>
 #define MAX_BUFFER 26
 char buf_in[MAX_BUFFER];
@@ -25,7 +26,7 @@ int main(void){
     for(i=0;i<MAX_BUFFER;i++){
         fprintf(stderr,"%c",buf_in[i]);
     }
-    fprintf("\n");
+    fprintf(stderr,"\n");
     close(fd);
     return 0;
 }

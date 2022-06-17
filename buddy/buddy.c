@@ -164,6 +164,7 @@ struct page* __alloc_pages(unsigned int gfp_mask,unsigned int order,zonelist_t *
         if(curr!=head){ // if there is PAGE
             unsigned long index;
             page=list_entry(curr,struct page,list);
+            printf("page : %p\n",page);
             list_del(curr);
             index=GET_NR_PAGES((unsigned long)page->addr);
             if(curr_order!=BUDDY_MAX_ORDER-1) MARK_USED(index,curr_order,area);
@@ -197,6 +198,7 @@ struct page* expand(zone_t* zone,struct page* page,unsigned long index, int low,
     return page;
 }
 
+// ptr is page->addr
 void _free_pages(void* ptr)
 {
     int i;
@@ -214,15 +216,15 @@ void __free_pages_ok(struct page* page,unsigned int order){
     free_area_t * area;
     struct page* base;
 
-    mask=(~0UL)<<order;
+    mask=(~0UL)<<order; // ~0UL == -1
     base=imem_map;
     page_idx=GET_NR_PAGES((unsigned long)page->addr);
     
-    index=page_idx>>(1+order);
+    index=page_idx>>(1+order); // index : bitmap index
 
     area=&free_area[order];
     free_pages-=mask;
-    ///
+    /// harrrrd
     while (mask+(1<<(BUDDY_MAX_ORDER-1) ))
     {
         struct page *buddy1,*buddy2;
@@ -261,7 +263,7 @@ void _show_free_order_list(int order)
         }
        
     }
-    printf("-------------------------------------------");
+    printf("\n-------------------------------------------\n");
 }
 
 void free_memory(void)

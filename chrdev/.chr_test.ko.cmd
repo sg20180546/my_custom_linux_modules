@@ -1,0 +1,1 @@
+cmd_/home/gs201/Desktop/kernel_study/chrdev/chr_test.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/gs201/Desktop/kernel_study/chrdev/chr_test.ko /home/gs201/Desktop/kernel_study/chrdev/chr_test.o /home/gs201/Desktop/kernel_study/chrdev/chr_test.mod.o;  true

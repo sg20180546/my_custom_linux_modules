@@ -26,7 +26,7 @@ static int mydrv_open(struct inode* inode,struct file* file)
 
 static int mydrv_release(struct inode* inode,struct file* file)
 {
-    printk("%s\n",__FUNCTION__)
+    printk("%s\n",__FUNCTION__);
     return 0;
 }
 static ssize_t mydrv_read(struct file* file,char* buf,size_t count,loff_t *ppos)
@@ -96,3 +96,4 @@ void mydrv_cleanup(void)
 }
 module_init(mydrv_init);
 module_exit(mydrv_cleanup);
+MODULE_LICENSE("GPL");

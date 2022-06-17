@@ -1,0 +1,1 @@
+cmd_/home/gs201/Desktop/kernel_study/chrdev/modules.order := {   echo /home/gs201/Desktop/kernel_study/chrdev/chr_test.ko; :; } | awk '!x[$$0]++' - > /home/gs201/Desktop/kernel_study/chrdev/modules.order

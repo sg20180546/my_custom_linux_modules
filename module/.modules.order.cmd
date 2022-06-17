@@ -1,0 +1,1 @@
+cmd_/home/gs201/Desktop/kernel_study/module/modules.order := {   echo /home/gs201/Desktop/kernel_study/module/hello_module.ko; :; } | awk '!x[$$0]++' - > /home/gs201/Desktop/kernel_study/module/modules.order
